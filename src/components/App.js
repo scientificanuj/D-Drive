@@ -89,7 +89,6 @@ class App extends Component {
       if(this.state.type === ''){
         this.setState({type: 'none'})
       }
-      
       this.state.dstorage.methods.uploadFile(result[0].hash, result[0].size, this.state.type, this.state.name, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({
          loading: false,
